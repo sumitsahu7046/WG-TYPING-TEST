@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="WG TYPING TEST - Modern typing speed and accuracy test."
+    >
+
+    <title>WG TYPING TEST</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg">
+        <div class="grid"></div>
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>&lt;</span>
+            WG
+            <b>TYPING</b>
+            <span>/&gt;</span>
+        </div>
+
+        <div class="nav-right">
+            <div class="live-dot"></div>
+            LIVE TEST
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="badge">
+                <span>⚡</span>
+                SPEED • ACCURACY • FOCUS
+            </div>
+
+            <h1>
+                WG <span>TYPING TEST</span>
+            </h1>
+
+            <p>
+                Test your typing speed, improve your accuracy
+                and become faster with every test.
+            </p>
+
+        </section>
+
+
+        <!-- MAIN TEST -->
+        <section class="test-container">
+
+            <!-- TOP STATS -->
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <div class="stat-icon">⏱</div>
+                    <div>
+                        <small>TIME</small>
+                        <strong id="timer">60</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">⚡</div>
+                    <div>
+                        <small>WPM</small>
+                        <strong id="wpm">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">🎯</div>
+                    <div>
+                        <small>ACCURACY</small>
+                        <strong id="accuracy">100%</strong>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">✕</div>
+                    <div>
+                        <small>ERRORS</small>
+                        <strong id="errors">0</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CONTROL BAR -->
+            <div class="control-bar">
+
+                <div class="duration">
+
+                    <span>TEST TIME</span>
+
+                    <button class="time-btn" data-time="15">
+                        15s
+                    </button>
+
+                    <button class="time-btn" data-time="30">
+                        30s
+                    </button>
+
+                    <button class="time-btn active" data-time="60">
+                        60s
+                    </button>
+
+                    <button class="time-btn" data-time="120">
+                        120s
+                    </button>
+
+                </div>
+
+                <button
+                    class="restart"
+                    id="restartBtn"
+                >
+                    <span>↻</span>
+                    RESTART
+                </button>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-area">
+
+                <div class="progress-info">
+                    <span>TEST PROGRESS</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        class="progress-bar"
+                        id="progressBar"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- TYPING BOX -->
+            <div
+                class="typing-box"
+                id="typingBox"
+            >
+
+                <div class="typing-top">
+
+                    <span>
+                        TYPE THE TEXT
+                    </span>
+
+                    <span id="typingStatus">
+                        CLICK HERE & START TYPING
+                    </span>
+
+                </div>
+
+
+                <!-- Text shown here -->
+                <div
+                    class="text-display"
+                    id="textDisplay"
+                ></div>
+
+
+                <!-- Invisible typing input -->
+                <textarea
+                    id="typingInput"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    aria-label="Typing input"
+                ></textarea>
+
+
+                <div class="click-message" id="clickMessage">
+                    <div class="keyboard-icon">⌨</div>
+                    <span>Click here and start typing</span>
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM INFO -->
+            <div class="bottom-info">
+
+                <div class="hint">
+                    <kbd>ESC</kbd>
+                    Restart
+                </div>
+
+                <div class="hint">
+                    <kbd>SPACE</kbd>
+                    Type naturally
+                </div>
+
+                <div class="hint">
+                    <span class="green-dot"></span>
+                    Best score saved automatically
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section
+            class="result hidden"
+            id="resultPanel"
+        >
+
+            <div class="result-glow"></div>
+
+            <div class="trophy">🏆</div>
+
+            <div class="result-label">
+                TEST COMPLETE
+            </div>
+
+            <h2>
+                YOUR PERFORMANCE
+            </h2>
+
+            <div class="result-grid">
+
+                <div class="result-card">
+                    <small>WPM</small>
+                    <strong id="finalWpm">0</strong>
+                    <span>Words / Minute</span>
+                </div>
+
+                <div class="result-card">
+                    <small>ACCURACY</small>
+                    <strong id="finalAccuracy">0%</strong>
+                    <span>Precision</span>
+                </div>
+
+                <div class="result-card">
+                    <small>ERRORS</small>
+                    <strong id="finalErrors">0</strong>
+                    <span>Mistakes</span>
+                </div>
+
+                <div class="result-card">
+                    <small>BEST WPM</small>
+                    <strong id="bestWpm">0</strong>
+                    <span>Personal Best</span>
+                </div>
+
+            </div>
+
+            <button
+                class="again-btn"
+                id="againBtn"
+            >
+                TRY AGAIN
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div>
+                © 2026 <strong>WG TYPING TEST</strong>
+            </div>
+
+            <div>
+                BUILT FOR SPEED
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
